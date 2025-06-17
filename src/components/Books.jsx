@@ -16,7 +16,7 @@ function Books() {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/fileupload/get-files");
+        const res = await axios.get("https://studyrepo-backend.onrender.com/fileupload/get-files");
         console.log("ress", res.data);
         setBook(res.data.data);
         // console.log("book", book);

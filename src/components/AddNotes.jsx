@@ -33,7 +33,7 @@ function AddNotes() {
 
 
   const getPdf = async () => {
-    const result = await axios.get("http://localhost:4001/fileupload/get-files");
+    const result = await axios.get("https://studyrepo-backend.onrender.com/fileupload/get-files");
     // console.log("imagesss", result.data.data);
     setAllImage(result.data.data);
   };
@@ -50,7 +50,7 @@ function AddNotes() {
   const cloudinaryimageurl = async () => {
     const obj = { image: image };
     const result = await axios.post(
-      "http://localhost:4001/img/imageUpload",
+      "https://studyrepo-backend.onrender.com/img/imageUpload",
       obj
     );
 
@@ -92,7 +92,7 @@ function AddNotes() {
       const token = localStorage.getItem("token");
       // console.log("tokennnn",token);
       const result = await axios.post(
-        "http://localhost:4001/fileupload/upload-files",
+        "https://studyrepo-backend.onrender.com/fileupload/upload-files",
         formData,
         {
           headers: {

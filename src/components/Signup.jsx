@@ -24,7 +24,7 @@ function Signup() {
 
     // console.log("rolee",userInfo.role)
     await axios
-      .post("http://localhost:4001/user/signup", userInfo)
+      .post("https://studyrepo-backend.onrender.com/user/signup", userInfo)
       .then((res) => {
         // console.log(res.data);
         if (res.data) {

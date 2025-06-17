@@ -23,7 +23,7 @@ function Cards({ item }) {
     // console.log(bookId);
     const token = localStorage.getItem("token");
     const res = await axios.delete(
-      `http://localhost:4001/book/delete/${bookId}`,
+      `https://studyrepo-backend.onrender.com/book/delete/${bookId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

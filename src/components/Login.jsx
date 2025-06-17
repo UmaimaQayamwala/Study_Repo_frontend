@@ -16,11 +16,11 @@ function Login() {
       password: data.password,
     };
     await axios
-      .post("http://localhost:4001/user/login", userInfo)
+      .post("https://studyrepo-backend.onrender.com/user/login", userInfo)
       .then((res) => {
         // console.log("resss",res.data);
 
-        
+
         if (res.data) {
           toast.success("Logged in Successfully");
           document.getElementById("my_modal_3").close();
