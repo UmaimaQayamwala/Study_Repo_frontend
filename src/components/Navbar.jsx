@@ -5,24 +5,18 @@ import { useState } from "react";
 import Login from "./Login";
 import Logout from "./Logout";
 import { useAuth } from "../context/AuthProvider";
-import { Link } from 'react-router-dom';
-
-
+import { Link } from "react-router-dom";
 
 // import logo from "../../public/logo.jpg";
 
-
 // eslint-disable-next-line react/prop-types
 function Navbar({ onInputChange }) {
- 
-   const [authUser] =useAuth();
-   const logo=import.meta.env.VITE_API_logo
- 
+  const [authUser] = useAuth();
+  const logo = import.meta.env.VITE_API_logo;
 
   // eslint-disable-next-line no-unused-vars
   const [sticky, setSticky] = useState(false);
-  const [searchText , setSearchText] = useState('');
-
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,8 +32,7 @@ function Navbar({ onInputChange }) {
     };
   }, []);
 
-  
-console.log("search",searchText);
+  console.log("search", searchText);
   const navItems = (
     <>
       {/* <li>
@@ -58,25 +51,29 @@ console.log("search",searchText);
         <a href="/addnotes" className="text-white hover:text-yellow-400">Upload</a>
       </li> */}
 
-      <Link to="/" className="text-white hover:text-yellow-400">Home</Link>
-<Link to="/course" className="text-white hover:text-yellow-400">Notes</Link>
-<Link to="/books" className="text-white hover:text-yellow-400">Books</Link>
-<Link to="/pyq" className="text-white hover:text-yellow-400">PYQs</Link>
-<Link to="/addnotes" className="text-white hover:text-yellow-400">Upload</Link>
-
+      <Link to="/" className="text-white hover:text-yellow-400 mx-2">
+        Home
+      </Link>
+      <Link to="/course" className="text-white hover:text-yellow-400 mx-2">
+        Notes
+      </Link>
+      <Link to="/books" className="text-white hover:text-yellow-400  mx-2">
+        Books
+      </Link>
+      <Link to="/pyq" className="text-white hover:text-yellow-400   mx-2">
+        PYQs
+      </Link>
+      <Link to="/addnotes" className="text-white hover:text-yellow-400   mx-2">
+        Upload
+      </Link>
     </>
   );
 
-
   return (
     <>
-      <div
-      
-        className="w-full h-[100px] px-0 py-0 fixed top-0 z-50 border-none"
-
-      >
-       {/* <div className="navbar bg-gradient-to-r from-[#96ccdd] via-[#3f70c4] to-[#3035a0] bg-opacity-80 backdrop-blur-md"> */}
-       <div className="navbar bg-[#0a1f44]  bg-opacity-80 backdrop-blur-md ">
+      <div className="w-full h-[100px] px-0 py-0 fixed top-0 z-50 border-none">
+        {/* <div className="navbar bg-gradient-to-r from-[#96ccdd] via-[#3f70c4] to-[#3035a0] bg-opacity-80 backdrop-blur-md"> */}
+        <div className="navbar bg-[#0a1f44]  bg-opacity-80 backdrop-blur-md ">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -106,8 +103,10 @@ console.log("search",searchText);
                 {navItems}
               </ul>
             </div>
-            <img className="w-[80px] h-[75px]"src={logo} alt="" />
-            <a className=" text-2xl text-white font-bold cursor-pointer ml-[5px]">StudyRepo</a>
+            <img className="w-[80px] h-[75px]" src={logo} alt="" />
+            <a className=" text-2xl text-white font-bold cursor-pointer ml-[5px]">
+              StudyRepo
+            </a>
           </div>
           <div className="navbar-end space-x-3">
             <div className="navbar-center hidden lg:flex">
@@ -119,12 +118,10 @@ console.log("search",searchText);
                   type="text"
                   className="grow outline-none rounded-md px-1 bg-black text-slate-300"
                   placeholder="Search"
-                  onChange={(e) => {setSearchText(e.target.value.replace(/\s+/g, ''));
-                    onInputChange(searchText)
-                  }
-                }
-
-                 
+                  onChange={(e) => {
+                    setSearchText(e.target.value.replace(/\s+/g, ""));
+                    onInputChange(searchText);
+                  }}
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,11 +144,6 @@ console.log("search",searchText);
                 className="theme-controller"
                 value="synthwave"
               />
-
-             
-             
-
-             
             </label>
 
             {authUser ? (
