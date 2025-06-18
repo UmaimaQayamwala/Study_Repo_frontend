@@ -21,7 +21,7 @@ function App() {
       <div className="bg-gradient-to-r from-[#60cef0] via-[#3f70c4] to-[#3035a0]">
         {/* <div className=" "> */}
         <Routes>
-          <Route path="/" element={<AddNotes />} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/course"
             element={authUser ? <Courses /> : <Navigate to="/signup" />}

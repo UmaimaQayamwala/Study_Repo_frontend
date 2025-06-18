@@ -5,6 +5,10 @@ import { useState } from "react";
 import Login from "./Login";
 import Logout from "./Logout";
 import { useAuth } from "../context/AuthProvider";
+import { Link } from 'react-router-dom';
+
+
+
 // import logo from "../../public/logo.jpg";
 
 
@@ -38,7 +42,7 @@ function Navbar({ onInputChange }) {
 console.log("search",searchText);
   const navItems = (
     <>
-      <li>
+      {/* <li>
         <a href="/"  className="text-white hover:text-yellow-400">Home</a>
       </li>
       <li>
@@ -52,7 +56,14 @@ console.log("search",searchText);
       </li>
       <li>
         <a href="/addnotes" className="text-white hover:text-yellow-400">Upload</a>
-      </li>
+      </li> */}
+
+      <Link to="/" className="text-white hover:text-yellow-400">Home</Link>
+<Link to="/course" className="text-white hover:text-yellow-400">Notes</Link>
+<Link to="/books" className="text-white hover:text-yellow-400">Books</Link>
+<Link to="/pyq" className="text-white hover:text-yellow-400">PYQs</Link>
+<Link to="/addnotes" className="text-white hover:text-yellow-400">Upload</Link>
+
     </>
   );
 
