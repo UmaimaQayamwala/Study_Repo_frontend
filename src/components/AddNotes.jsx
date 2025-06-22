@@ -110,7 +110,8 @@ function AddNotes() {
       }
 
       else{
-         alert("not uploaded!!!");
+        console.log(result);
+         alert(result.data.message.message);
       }
     };
 
